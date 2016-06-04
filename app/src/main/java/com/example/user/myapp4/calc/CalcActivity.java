@@ -55,6 +55,8 @@ public class CalcActivity extends Activity implements  View.OnClickListener {
         ((Button) findViewById(R.id.btMuti)).setOnClickListener(this);
         ((Button) findViewById(R.id.btDivide)).setOnClickListener(this);
         ((Button) findViewById(R.id.btMod)).setOnClickListener(this);
+        ((Button) findViewById(R.id.returnMain)).setOnClickListener(this);
+
 
 //        btPlus.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
@@ -79,6 +81,7 @@ public class CalcActivity extends Activity implements  View.OnClickListener {
             etNum2 = (EditText) findViewById(R.id.Input2);
             num1 = Integer.parseInt(etNum1.getText().toString());
             num2 = Integer.parseInt(etNum2.getText().toString());
+            Log.d(num1+"=======================", String.valueOf(num1));
             int result = 0;
             switch (v.getId()){
                 case R.id.btPlus : result = service.plus(num1,num2); break;
