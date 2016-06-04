@@ -1,6 +1,7 @@
 package com.example.user.myapp4.calc;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.user.myapp4.R;
+import com.example.user.myapp4.main.MainActivity;
 
 public class CalcActivity extends Activity implements  View.OnClickListener {
 //    Button btPlus, btMinus, btMuti, btDevide, btMod;
@@ -65,20 +67,25 @@ public class CalcActivity extends Activity implements  View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        etNum1 = (EditText) findViewById(R.id.Input1);
-        etNum2 = (EditText) findViewById(R.id.Input2);
-        num1 = Integer.parseInt(etNum1.getText().toString());
-        num2 = Integer.parseInt(etNum2.getText().toString());
-        String msg;
-        int result = 0;
-        switch (v.getId()){
-            case R.id.btPlus : result = service.plus(num1,num2); break;
-            case R.id.btMinus: result = service.minus(num1,num2);break;
-            case R.id.btMuti: result = service.multi(num1,num2);break;
-            case R.id.btDivide: result = service.devide(num1,num2);break;
-            case R.id.btMod: result = service.nmg(num1,num2);break;
+        if(v.getId() == R.id.returnMain){
+            startActivity(new Intent(this, MainActivity.class));
         }
+        else {
+            etNum1 = (EditText) findViewById(R.id.Input1);
+            etNum2 = (EditText) findViewById(R.id.Input2);
+            num1 = Integer.parseInt(etNum1.getText().toString());
+            num2 = Integer.parseInt(etNum2.getText().toString());
+            int result = 0;
+            switch (v.getId()){
+                case R.id.btPlus : result = service.plus(num1,num2); break;
+                case R.id.btMinus: result = service.minus(num1,num2);break;
+                case R.id.btMuti: result = service.multi(num1,num2);break;
+                case R.id.btDivide: result = service.devide(num1,num2);break;
+                case R.id.btMod: result = service.nmg(num1,num2);break;
+            }
 //        Log.d(msg, "카우프지수"); // log 보기
-        Resultvalue1.setText("계산결과 :: " + res1);
+            Resultvalue1.setText("계산결과 :: " + res1);
+        }
+
     }
 }
