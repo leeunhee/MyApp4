@@ -46,7 +46,7 @@ public class CalcActivity extends Activity implements  View.OnClickListener {
 ////        btMuti = (Button) findViewById(R.id.btMuti);
 ////        btDevide = (Button) findViewById(R.id.btDivide);
 ////        btMod = (Button) findViewById(R.id.btMod);
-//        Resultvalue1 = (TextView) findViewById(R.id.resultValue);
+        Resultvalue1 = (TextView) findViewById(R.id.resultValue);
 //        res1 = Integer.parseInt(etNum1.toString())+Integer.parseInt(etNum2.toString());
 
 
@@ -73,6 +73,8 @@ public class CalcActivity extends Activity implements  View.OnClickListener {
             startActivity(new Intent(this, MainActivity.class));
         }
         else {
+            Toast tMsg = Toast.makeText(CalcActivity.this,"계산", Toast.LENGTH_SHORT);
+            tMsg.show();
             etNum1 = (EditText) findViewById(R.id.Input1);
             etNum2 = (EditText) findViewById(R.id.Input2);
             num1 = Integer.parseInt(etNum1.getText().toString());
