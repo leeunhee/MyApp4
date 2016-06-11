@@ -43,6 +43,7 @@ public class MemberBean {
 
     @Override
     public String toString() {
+
         return "[회원정보]" +
                 "ID='" + id + '\'' +
                 ", 비번='" + pwd + '\'' +

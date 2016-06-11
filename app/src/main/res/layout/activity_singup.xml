@@ -79,5 +79,12 @@
         android:text="전송"
         android:textSize="30dp"
         android:id="@+id/btSignup"/>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입결과 >> "
+        android:textSize="20dp"
+        android:textColor="#ff0000"
+        android:id="@+id/resultValue"
+        />
 </LinearLayout>

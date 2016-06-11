@@ -3,19 +3,14 @@ package com.example.user.myapp4.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.user.myapp4.R;
 import com.example.user.myapp4.calc.CalcActivity;
 import com.example.user.myapp4.kaup.KaupActivity;
 import com.example.user.myapp4.login.LoginActivity;
+import com.example.user.myapp4.signup.SignupActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     Button btKaup, btCalc, btLogin;
@@ -34,7 +29,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ((Button) findViewById(R.id.btKaup)).setOnClickListener(this);
         ((Button) findViewById(R.id.btCalc)).setOnClickListener(this);
         ((Button) findViewById(R.id.btLogin)).setOnClickListener(this);
-        ((Button) findViewById(R.id.btSingup)).setOnClickListener(this);
+        ((Button) findViewById(R.id.btSingup)).setOnClickListener(this); // 20160611
     }
 
     @Override
@@ -52,8 +47,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btLogin:
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
-            case R.id.btSingup:
-                startActivity(new Intent(this, LoginActivity.class));
+            case R.id.btSingup: // 20160611
+                startActivity(new Intent(this, SignupActivity.class));
                 break;
         }
     }
