@@ -11,12 +11,14 @@ import android.util.Log;
  */
 public class MemberDAO extends SQLiteOpenHelper {
     public MemberDAO(Context context) {
-        super(context, null, null, 1); // DB_NAME, null, DB_VERSION , 1
+        super(context, "hanbitDB", null, 1); // DB_NAME, null, DB_VERSION , 1
+
 //        super(context, name, factory, version);
     }
     // DB 생성
     @Override
     public void onCreate(SQLiteDatabase db) {
+//        db.execSQL("Create table member2 (id text, pw text, name text , email text);");
 
     }
 
@@ -44,7 +46,9 @@ public class MemberDAO extends SQLiteOpenHelper {
 //    @Override // 지운다
     public MemberBean login(MemberBean member) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor  = db.rawQuery("Select id, pw, name, email from member where id = '"+ member.getId() +"' and pw = '"+ member.getPwd() +"' ", null);
+        Log.i("Editid=>", member.getId());
+        Cursor cursor  = db.rawQuery("Select id, pw, name, email from member where id = '"+ member.getId() +"' and pw = '"+ member.getPwd() +"' ; ", null);
+//        Cursor cursor  = db.rawQuery("Select id, pw, name, email from member; ", null);
         String cid = "";
         String pw = "";
         String cname = "";

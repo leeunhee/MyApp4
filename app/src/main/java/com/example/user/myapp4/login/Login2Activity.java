@@ -67,16 +67,20 @@ public class Login2Activity extends Activity implements View.OnClickListener {
 //        MemberService service = new MemberServiceImpl(); // 0611
         MemberDAO dao = new MemberDAO(this.getApplicationContext());// 0611_1
         // 암호화
-//        Log.d("id", id);
+        Log.d("id", id);
         member.setId(id);
         member.setPwd(pwd);
 //        String msg = service.signup(member); // void 여서 -> string 으로 변경
         member = dao.login(member); // void 여서 -> string 으로 변경 // 0611_1
-        Log.i("DB 다녀온 결과 ID ", member.getId());
-        if(member == null){
-            resultValue.setText("로그인 결과 :: 실패 ㅠ.ㅜ^");
+        Log.d("================", member.getName());
+        Log.i("Editid=>", member.getName());
+
+        System.out.println("member.getName()="+member.getName());
+        if(member.getName().isEmpty() == true){
+            resultValue.setText("로그인 결과 :: 실패 ㅠ.ㅜ");
 
         }else {
+            Log.i("DB 다녀온 결과 ID ", member.getId());
             resultValue.setText("로그인 결과 :: ID = " + member.getId() + " Name = " + member.getName() + "님 환영합니다.^^");
 
         }
