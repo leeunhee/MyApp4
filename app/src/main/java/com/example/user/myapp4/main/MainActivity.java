@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.example.user.myapp4.R;
 import com.example.user.myapp4.calc.CalcActivity;
 import com.example.user.myapp4.kaup.KaupActivity;
-import com.example.user.myapp4.login.LoginActivity;
+import com.example.user.myapp4.login.Login2Activity;
 import com.example.user.myapp4.signup.SignupActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -45,7 +45,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(new Intent(this, CalcActivity.class));
                 break;
             case R.id.btLogin:
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(this, Login2Activity.class));
                 break;
             case R.id.btSingup: // 20160611
                 startActivity(new Intent(this, SignupActivity.class));

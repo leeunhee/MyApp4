@@ -2,6 +2,7 @@ package com.example.user.myapp4.signup;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,15 +37,16 @@ public class SignupActivity extends Activity implements View.OnClickListener{
         String email = etMail.getText().toString();
         // 새로 배우는 개념
         MemberBean member = new MemberBean();
-        MemberService service = new MemberServiceImpl();
-        MemberDAO dao = new MemberDAO(this.getApplicationContext()); // --
+//        MemberService service = new MemberServiceImpl(); // 0611
+        MemberDAO dao = new MemberDAO(this.getApplicationContext());// 0611_1
         // 암호화
+//        Log.d(id,"id");
         member.setId(id);
         member.setName(name);
         member.setPwd(pwd);
         member.setEmail(email);
 //        String msg = service.signup(member); // void 여서 -> string 으로 변경
-        String msg = dao.signup(member); // void 여서 -> string 으로 변경 // --
+        String msg = dao.signup(member); // void 여서 -> string 으로 변경 // 0611_1
         resultValue.setText("회원가입 결과 :: " + msg);
 
     }
