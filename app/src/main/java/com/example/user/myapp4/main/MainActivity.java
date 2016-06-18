@@ -6,6 +6,7 @@ import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.example.user.myapp4.R;
 import com.example.user.myapp4.calc.CalcActivity;
@@ -14,6 +15,7 @@ import com.example.user.myapp4.kaup.KaupActivity;
 import com.example.user.myapp4.login.Login2Activity;
 import com.example.user.myapp4.move.MovieActivity;
 import com.example.user.myapp4.signup.SignupActivity;
+import com.example.user.myapp4.spinner.SpinnerActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     Button btKaup, btCalc, btLogin;
@@ -35,6 +37,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ((Button) findViewById(R.id.btSingup)).setOnClickListener(this); // 20160611
         ((Button) findViewById(R.id.btGroup)).setOnClickListener(this); // 20160618
         ((Button) findViewById(R.id.btMovie)).setOnClickListener(this); // 20160618
+        ((Button) findViewById(R.id.btSpinner)).setOnClickListener(this); // 20160618
+
     }
 
     @Override
@@ -60,6 +64,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btMovie: // 20160618
                 startActivity(new Intent(this, MovieActivity.class));
+                break;
+            case R.id.btSpinner:
+                startActivity(new Intent(this, SpinnerActivity.class));
                 break;
         }
     }
