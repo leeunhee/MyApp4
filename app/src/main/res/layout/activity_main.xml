@@ -32,4 +32,11 @@
         android:layout_margin="10dp"
         android:id="@+id/btSingup"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="걸그룹"
+        android:layout_margin="10dp"
+        android:id="@+id/btGroup"
+        />
 </LinearLayout>
